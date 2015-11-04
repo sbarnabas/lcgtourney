@@ -2,6 +2,7 @@
 <html lang="en" ng-app="lcgtourney">
   <head>
     <meta charset="utf-8">
+    <meta name="google-signin-client_id" content="843432077725-3ut6fk0efqepm6asjm92r7lemqfmh05q.apps.googleusercontent.com">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
     <!-- Optional theme -->
@@ -9,7 +10,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="import" href="{{ url_for('bower.static', filename='polymer/polymer.html') }}">
     
-
     <title>LCG Tourney</title>
   </head>
   <body ng-controller="TourneyController">
@@ -27,13 +27,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <form class="navbar-form navbar-right">
-            <div class="form-group">
-              <input type="text" placeholder="Email" class="form-control">
-            </div>
-            <div class="form-group">
-              <input type="password" placeholder="Password" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-success">Sign in</button>
+            <div class="g-signin2" data-onsuccess="onSignIn" data-onfailure="onSignIn"></div>
           </form>
           </div><!--/.navbar-collapse -->
         </div>
@@ -76,5 +70,17 @@
         <script src="{{ url_for('bower.static', filename='webcomponentsjs/webcomponents.js') }}"></script>
         <script src="{{ url_for('static', filename='main.js') }}"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script type="text/javascript">
+        function onSignIn(googleUser) {
+          alert("here");
+        var profile = googleUser.getBasicProfile();
+        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+        console.log('Name: ' + profile.getName());
+        console.log('Image URL: ' + profile.getImageUrl());
+        console.log('Email: ' + profile.getEmail());
+        alert("done");
+        }
+        </script>
       </body>
     </html>
