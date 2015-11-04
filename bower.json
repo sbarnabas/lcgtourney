@@ -1,0 +1,32 @@
+{
+  "name": "lcgtourney",
+  "homepage": "https://github.com/sbarnabas/lcgtourney",
+  "authors": [
+    "Sandy Barnabas <sbarnabas@gmail.com>"
+  ],
+  "description": "Tournament Software for Card Games",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "~1.2.1",
+    "jquery": "~2.1.4",
+    "iron-elements": "PolymerElements/iron-elements#~1.0.4",
+    "paper-elements": "PolymerElements/paper-elements#~1.0.5",
+    "firebase-element": "GoogleWebComponents/firebase-element#^1.0.0",
+    "google-analytics": "GoogleWebComponents/google-analytics#^1.0.0",
+    "google-apis": "GoogleWebComponents/google-apis#^1.0.0",
+    "google-calendar": "GoogleWebComponents/google-calendar#^1.0.0",
+    "google-chart": "GoogleWebComponents/google-chart#^1.0.0",
+    "google-map": "GoogleWebComponents/google-map#^1.0.0",
+    "google-sheets": "GoogleWebComponents/google-sheets#^1.0.1"
+  }
+}
